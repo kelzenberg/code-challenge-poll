@@ -19,9 +19,22 @@
   - Add CORS middleware to allow requests from the frontend
     - Use environment variables to configure allowed origins
     - Defaults to `development` environment
+- Status codes are not used correctly
+  - Use `HTTP_200_OK` for successful responses
+  - Use `HTTP_404_NOT_FOUND` for not found errors
+- Misleading Python typing imports (`Any`)
 
-### Potential Improvements
+### Missed accomplishments/potential improvements
 
+- Adding tests for the API endpoints etc.
 - Use proper environment variable handling
 - Use a proper logging library for monitoring
-
+- Foreign input validation
+  - Validate and sanitize incoming data
+  - Ensure that all required fields are present and correctly typed
+- Conceal database errors from API clients
+- Increase HTTP server security
+  - Enforce HTTPS in production
+  - Implement authentication and authorization
+  - Check for SQL injection vulnerabilities
+- Check for deprecated or outdated libraries and their usage
