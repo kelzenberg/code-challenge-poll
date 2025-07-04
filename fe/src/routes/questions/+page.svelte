@@ -51,8 +51,6 @@
 	$: if (message === 'Question submitted successfully!') {
 		fetchQuestions();
 	}
-
-
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
@@ -64,7 +62,6 @@
 {#if message}
 	<p>{message}</p>
 {/if}
-
 
 {#if loading}
 	<p>Loading questions...</p>

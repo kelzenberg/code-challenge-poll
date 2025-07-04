@@ -9,7 +9,7 @@
 	let text = '';
 	let message = '';
 
-		async function handleSubmit(event: SubmitEvent) {
+	async function handleSubmit(event: SubmitEvent) {
 		event.preventDefault();
 		try {
 			const response = await fetch('http://localhost:8000/answer', {
@@ -37,7 +37,7 @@
 			const res = await fetch('http://localhost:8000/answer');
 			if (res.ok) {
 				const answers: Answer[] = await res.json();
-				answer = answers.filter(ans => ans.question_id === parseInt(id));
+				answer = answers.filter((ans) => ans.question_id === parseInt(id));
 			} else {
 				error = 'Failed to load answer.';
 			}
@@ -56,13 +56,11 @@
 	}
 </script>
 
-
 <form on:submit|preventDefault={handleSubmit}>
 	<label for="answer">Answer:</label>
 	<input id="answer" type="text" bind:value={text} required />
 	<button type="submit">Submit</button>
 </form>
-
 
 {#if loading}
 	<p>Loading...</p>
