@@ -1,5 +1,5 @@
 import os
-from typing import Annotated, Any, Union
+from typing import Annotated, Union
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Field, SQLModel, Session, create_engine, select
