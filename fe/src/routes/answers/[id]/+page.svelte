@@ -47,8 +47,29 @@
 			loading = false;
 		}
 	}
+
+	async function updateVisitors(questionId: number) {
+		try {
+			const response = await fetch(`http://localhost:8000/question/${questionId}/visitors`, {
+				method: 'PUT'
+			});
+			if (!response.ok) {
+				console.error('Failed to update visitors count.');
+			}
+		} catch (error) {
+			console.error('Error updating visitors count:', error);
+		}
+	}
+
 	onMount(() => {
 		fetchAnswers();
+		
+		const questionId = parseInt(id);
+		if (!isNaN(questionId)) {
+			updateVisitors(questionId);
+		} else {
+			error = 'Invalid question ID.';
+		}
 	});
 
 	$: if (message === 'Answer submitted successfully!') {

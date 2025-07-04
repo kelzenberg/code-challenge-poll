@@ -1,6 +1,7 @@
 interface Question {
     id: number
     text: string
+    visitors: number
 }
 
 interface Answer {

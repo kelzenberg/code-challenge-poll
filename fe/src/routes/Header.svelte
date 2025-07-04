@@ -22,6 +22,9 @@
 			<li aria-current={page.url.pathname === '/questions' ? 'page' : undefined}>
 				<a href="/questions">questions</a>
 			</li>
+			<li aria-current={page.url.pathname === '/question/visits' ? 'page' : undefined}>
+				<a href="/questions/visits">question visitors</a>
+			</li>
 			<li aria-current={page.url.pathname.startsWith('/answers') ? 'page' : undefined}>
 				<a href="/answers">answers</a>
 			</li>

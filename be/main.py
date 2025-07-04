@@ -23,13 +23,14 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=originsProd if is_production else originsDev,
     allow_credentials=True,
-    allow_methods=["GET", "POST"], # only allow used methods
+    allow_methods=["GET", "POST", "PUT"], # only allow used methods
     allow_headers=["*"],
 )
 
 class Question(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     text: str = Field(index=True)
+    visitors: int = Field(default=0)
 
 class Answer(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
@@ -80,6 +81,17 @@ def read_question(question_id: int, session: SessionDep) -> Question:
     question = session.get(Question, question_id)
     if not question:
         raise HTTPException(status_code=404, detail="question not found")
+    return question
+
+
+@app.put("/question/{question_id}/visitors")
+def update_visitors(question_id: int, session: SessionDep) -> Question:
+    question = session.get(Question, question_id)
+    if not question:
+        raise HTTPException(status_code=404, detail="question not found")
+    question.visitors += 1
+    session.commit()
+    session.refresh(question)
     return question
 
 
