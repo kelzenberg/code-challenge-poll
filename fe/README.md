@@ -28,6 +28,8 @@ npm run dev -- --open
 - Questions page returns errors
   - CORS error when trying to fetch data from the backend
   - 307 (Temporary Redirect) error
+- Answers page can only be accessed with a valid question ID
+  - Add a selector to choose a question on answers page
 
 
 ### Missed accomplishments
