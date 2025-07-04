@@ -20,3 +20,8 @@
     - Use environment variables to configure allowed origins
     - Defaults to `development` environment
 
+### Potential Improvements
+
+- Use proper environment variable handling
+- Use a proper logging library for monitoring
+
