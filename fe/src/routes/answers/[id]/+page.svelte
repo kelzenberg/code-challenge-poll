@@ -63,7 +63,7 @@
 
 	onMount(() => {
 		fetchAnswers();
-		
+
 		const questionId = parseInt(id);
 		if (!isNaN(questionId)) {
 			updateVisitors(questionId);

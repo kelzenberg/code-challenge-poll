@@ -1,11 +1,11 @@
 interface Question {
-    id: number
-    text: string
-    visitors: number
+	id: number;
+	text: string;
+	visitors: number;
 }
 
 interface Answer {
-    id: number
-    text: string
-    question_id: number
+	id: number;
+	text: string;
+	question_id: number;
 }

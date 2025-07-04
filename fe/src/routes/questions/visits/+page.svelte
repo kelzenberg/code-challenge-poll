@@ -36,13 +36,13 @@
 				<div>
 					{question.text}
 				</div>
-        <div>
-          {#if question.visitors}
-            Visitors: {question.visitors}
-          {:else}
-            No visitors yet
-          {/if}
-        </div>
+				<div>
+					{#if question.visitors}
+						Visitors: {question.visitors}
+					{:else}
+						No visitors yet
+					{/if}
+				</div>
 			</li>
 		{/each}
 	</ul>
