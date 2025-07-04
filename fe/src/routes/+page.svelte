@@ -1,6 +1,8 @@
 <script lang="ts">
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcomeFallback from '$lib/images/svelte-welcome.png';
+
+	let welcomeImgErr = $state(false);
 </script>
 
 <svelte:head>
@@ -9,7 +11,14 @@
 </svelte:head>
 
 <section>
-
+	<div class="welcome">
+		<img
+			src={welcomeImgErr ? welcomeFallback : welcome}
+			alt="Welcome"
+			onerror={() => (welcomeImgErr = true)}
+		/>
+	</div>
+	<h1>Svelte(Kit) & FastAPI Coding Challenge</h1>
 </section>
 
 <style>

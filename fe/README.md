@@ -23,5 +23,8 @@ npm run dev -- --open
   - Run `npm install` to update package-lock.json
 - Footer style provided but no footer component exists
   - Create a footer component, move and use the provided style
+- Welcome image and headline styles provided but not used
+  - Create a welcome image and headline, use the provided styles
+
 
 ### Missed accomplishments
