@@ -33,6 +33,7 @@ npm run dev -- --open
 - SSR features not used
   - Use SvelteKit's `load` function to fetch data on the server side
 - Test don't run out-of-the-box
+- Answer selector on `/answers` is bugged as it doesn't always select the correct question
 
 ### Missed accomplishments/potential improvements
 
