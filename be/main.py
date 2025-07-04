@@ -1,8 +1,31 @@
+import os
 from typing import Annotated, Any, Union
 from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Field, SQLModel, Session, create_engine, select
 
 app = FastAPI()
+
+env = os.getenv("ENV", "development") # defaults to development
+is_production = env.lower() == "production"
+
+originsDev = [
+    "http://localhost",
+    "http://localhost:5173",
+]
+originsProd = [
+    "https://findiq.de"
+]
+
+print(f"Running in {'production' if is_production else 'development'} mode") # replace with proper logging
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=originsProd if is_production else originsDev,
+    allow_credentials=True,
+    allow_methods=["GET", "POST"], # only allow used methods
+    allow_headers=["*"],
+)
 
 class Question(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)

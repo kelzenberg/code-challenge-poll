@@ -10,3 +10,13 @@
     uv run fastapi run
     source .venv/bin/activate
 ```
+
+## Code Challenge
+
+### Found Issues
+
+- FastAPI CORS middleware is not configured
+  - Add CORS middleware to allow requests from the frontend
+    - Use environment variables to configure allowed origins
+    - Defaults to `development` environment
+
