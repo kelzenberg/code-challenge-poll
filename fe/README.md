@@ -32,6 +32,7 @@ npm run dev -- --open
   - Add a selector to choose a question on answers page
 - SSR features not used
   - Use SvelteKit's `load` function to fetch data on the server side
+- Test don't run out-of-the-box
 
 ### Missed accomplishments/potential improvements
 
