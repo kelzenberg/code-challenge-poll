@@ -40,6 +40,8 @@ npm run dev -- --open
   - Some components use outdated Svelte syntax (e.g. in form elements with `on:*`)
 - Use more SSR features
   - e.g. Use SvelteKit's `load` function to fetch data on the server side
+- Some code can be moved to the `src/lib` folder
+  - e.g. fetching all questions function
 - Increase TypeScript typing usage
 - Little triangular shape in header for question visitors menu item is missing
 - Remove unused/empty files
