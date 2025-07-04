@@ -25,6 +25,9 @@ npm run dev -- --open
   - Create a footer component, move and use the provided style
 - Welcome image and headline styles provided but not used
   - Create a welcome image and headline, use the provided styles
+- Questions page returns errors
+  - CORS error when trying to fetch data from the backend
+  - 307 (Temporary Redirect) error
 
 
 ### Missed accomplishments
