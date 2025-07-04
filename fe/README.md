@@ -30,6 +30,15 @@ npm run dev -- --open
   - 307 (Temporary Redirect) error
 - Answers page can only be accessed with a valid question ID
   - Add a selector to choose a question on answers page
+- SSR features not used
+  - Use SvelteKit's `load` function to fetch data on the server side
 
+### Missed accomplishments/potential improvements
 
-### Missed accomplishments
+- Not using Svelte v5 consistently
+  - Some components use outdated Svelte syntax (e.g. in form elements with `on:*`)
+- Use more SSR features
+  - e.g. Use SvelteKit's `load` function to fetch data on the server side
+- Increase TypeScript typing usage
+- Little triangular shape in header for question visitors menu item is missing
+- Remove unused/empty files
